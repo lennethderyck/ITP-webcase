@@ -5,6 +5,7 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
+import { Banner } from "../components/Banner";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -83,6 +84,7 @@ const Index = ({recipes, navigation, settings }) => {
         <title>{prismicH.asText(settings.data.websiteName)}</title>
       </Head>
       <div className="container">
+        <Banner settings={settings}/>
         <ul className="recipe">
           {recipes.map((recipe) => (
             <Recipe key={recipe.id} recipe={recipe} />

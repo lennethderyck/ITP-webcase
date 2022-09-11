@@ -14,8 +14,37 @@
     "websiteName": [
       {
         "type": "paragraph",
-        "text": "Officia do dolore adipisicing nostrud eiusmod commodo. Sit tempor adipisicing voluptate adipisicing consectetur in. Irure et veniam aute pariatur sit sit laborum eu elit consectetur.",
+        "text": "Culpa occaecat esse in sunt Lorem nostrud cillum ut proident adipisicing. Do consectetur elit aliquip proident eu id ullamco pariatur cillum dolore ex qui dolor tempor dolore.",
         "spans": []
+      }
+    ],
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Culpa et sit magna nisi aliqua fugiat tempor et ad minim. Tempor reprehenderit occaecat sit sit reprehenderit ullamco nisi duis aliqua ad elit ad est exercitation. Reprehenderit sunt adipisicing duis aliquip nulla non nisi reprehenderit quis sint enim elit aute.",
+        "spans": []
+      }
+    ],
+    "recipeLink": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    },
+    "quote": [
+      {
+        "author": [
+          {
+            "type": "paragraph",
+            "text": "Enim consequat amet enim laborum enim minim non consectetur occaecat fugiat cupidatat.",
+            "spans": []
+          }
+        ],
+        "quote": [
+          {
+            "type": "paragraph",
+            "text": "Incididunt pariatur veniam id laborum velit qui aliquip sint nostrud exercitation esse excepteur nulla. Deserunt amet ea sint.",
+            "spans": []
+          }
+        ]
       }
     ]
   }

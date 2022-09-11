@@ -15,7 +15,12 @@ export const Header = ({
 }) => {
   return (
         <nav className="nav">
-          <ul className="d-flex">
+          <NavItem>
+              <PrismicLink href="/">
+                <p className="logo">FOOD ARCHIVE</p>
+              </PrismicLink>
+            </NavItem>
+          <ul>
             <NavItem>
               <PrismicLink href="/">
                 <PrismicText field={navigation.data.homepagelabel} />

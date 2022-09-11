@@ -7,7 +7,6 @@ import { createClient, linkResolver } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -100,9 +99,9 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
             <div className="w-full">
-              <Heading size="2xl" className="mb-10">
+              <h2>
                 Latest recipes
-              </Heading>
+              </h2>
               <ul className="grid grid-cols-1 gap-12">
                 {latestRecipes.map((recipe) => (
                   <LatestRecipe key={recipe.id} recipe={recipe} />
