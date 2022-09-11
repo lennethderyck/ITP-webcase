@@ -1,0 +1,37 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "navigation",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "homepagelabel": [
+      {
+        "type": "paragraph",
+        "text": "Ipsum consequat ad in labore tempor culpa consectetur ut Lorem duis est nulla labore.",
+        "spans": []
+      }
+    ],
+    "links": [
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Ut eiusmod adipisicing ut occaecat ut anim ipsum elit sit qui elit. Proident esse proident consequat irure enim veniam tempor sit nisi. Culpa ea occaecat eiusmod minim consequat eu.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ]
+  }
+}

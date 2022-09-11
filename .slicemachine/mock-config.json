@@ -1,0 +1,27 @@
+{
+  "_cts": {
+    "page": {},
+    "recipe": {},
+    "navigation": {},
+    "settings": {
+      "websiteName": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "Image": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Text": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

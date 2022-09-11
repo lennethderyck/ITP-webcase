@@ -1,0 +1,65 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "recipe",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "paragraph",
+        "text": "Nulla esse labore fugiat voluptate laboris nisi qui in mollit officia ex consequat ullamco.",
+        "spans": []
+      }
+    ],
+    "featuredImage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
+    },
+    "duration": [
+      {
+        "type": "paragraph",
+        "text": "Ut sit et eu tempor id excepteur laboris.",
+        "spans": []
+      }
+    ],
+    "publishDate": "2022-03-12",
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Anim sint do dolore.",
+        "spans": []
+      }
+    ],
+    "ingredients": [
+      {
+        "ingredient": [
+          {
+            "type": "paragraph",
+            "text": "Id laboris laboris velit aliquip ad pariatur incididunt sint. Nisi ullamco amet anim irure eiusmod ut pariatur nisi est quis. In reprehenderit esse ullamco magna commodo exercitation qui ex sint velit.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "maker": [
+      {
+        "type": "paragraph",
+        "text": "Ipsum laboris ut id adipisicing non aliqua quis nostrud quis proident laborum officia. Occaecat nulla est labore labore eu irure id mollit consectetur sint ad enim eiusmod duis. Do elit qui fugiat quis.",
+        "spans": []
+      }
+    ],
+    "slices": []
+  }
+}
