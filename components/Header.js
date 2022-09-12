@@ -17,7 +17,7 @@ export const Header = ({
         <nav className="nav">
           <NavItem>
               <PrismicLink href="/">
-                <p className="logo">FOOD ARCHIVE</p>
+                <p className="logo"><PrismicText field={settings.data.websiteName} /></p>
               </PrismicLink>
             </NavItem>
           <ul>

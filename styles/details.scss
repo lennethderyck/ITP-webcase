@@ -7,8 +7,93 @@
     color: rgb(71, 71, 71);
   }
 
+  .latestRecipes {
+    margin-bottom: 50px;
+    h1 {
+      font-family: "Aboreto";
+      font-weight: bold;
+    }
+
+    .latestRecipesList {
+      width: 100%;
+      height: 250px;
+      padding: 20px;
+      display: flex;
+      margin-bottom: 50px;
+      gap: 50px;
+
+      li {
+        list-style: none;
+        color: black;
+        width: 25%;
+
+        .recipe-img {
+          height: 200px;
+          position: relative;
+        }
+
+        .recipe-text {
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+
+          .duration {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+
   article {
-    padding: 30px;
+    padding: 20px;
+
+    .ingredients {
+      padding: 50px;
+      display: flex;
+      justify-content: space-evenly;
+      .list-ingredients {
+        width: 50%;
+        height: 100%;
+        h1 {
+          margin-bottom: 40px;
+          font-family: "Aboreto";
+          font-weight: bold;
+        }
+
+        ul {
+          li {
+            font-size: 20px;
+            font-style: italic;
+            font-family: "Heebo";
+          }
+        }
+      }
+      .description-ingredients {
+        width: 50%;
+        height: 100%;
+
+        li {
+          list-style: none;
+          font-size: 20px;
+          display: flex;
+          gap: 10px;
+        }
+        h1 {
+          margin-bottom: 40px;
+          font-family: "Aboreto";
+          font-weight: bold;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
 
     .recipe-header {
       display: flex;
@@ -16,9 +101,12 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      width: 70%;
+      margin: auto;
       h1 {
         font-size: 70px;
         margin-bottom: 20px;
+        font-family: "Raleway";
       }
       h2 {
         font-size: 17px;
@@ -27,7 +115,7 @@
       }
       h3 {
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 300;
         margin-bottom: 50px;
       }
       p {

@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicLink, PrismicText, PrismicRichText,SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage,  } from "@prismicio/next";
 
 import { createClient, linkResolver } from "../../prismicio";
 import { components } from "../../slices";
@@ -16,13 +16,30 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 const LatestRecipe = ({ recipe }) => {
 
+  const featuredImage =
+    (prismicH.isFilled.image(recipe.data.featuredImage) &&
+      recipe.data.featuredImage) ||
+    findFirstImage(recipe.data.slices);
+
   return (
     <li>
-      <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-        <PrismicLink document={recipe}>
-          <PrismicText field={recipe.data.title} />
-        </PrismicLink>
-      </h1>
+      <PrismicLink document={recipe} tabIndex="-1">
+        <div className="recipe-img">
+          {prismicH.isFilled.image(featuredImage) && (
+            <PrismicNextImage
+              field={featuredImage}
+              layout="fill"
+            />
+          )}
+        </div>
+      </PrismicLink>
+      <div className="recipe-text">
+        <h2>
+          <PrismicLink document={recipe}>
+            <PrismicText field={recipe.data.title} />
+          </PrismicLink>
+        </h2>
+      </div>
     </li>
   );
 };
@@ -44,6 +61,17 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
     (prismicH.isFilled.image(recipe.data.featuredImage) &&
       recipe.data.featuredImage) ||
     findFirstImage(recipe.data.slices);
+
+    const getExcerpt = (slices) => {
+      const text = slices
+        .filter((slice) => slice.slice_type === "text")
+        .map((slice) => prismicH.asText(slice.primary.text))
+        .join(" ");
+    
+      return text;
+    };
+
+    const excerpt = getExcerpt(recipe.data.slices);
 
   return (
     <Layout
@@ -74,7 +102,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
               <PrismicText field={recipe.data.title} />
             </h1>
             <h3>
-              <PrismicText field={recipe.data.description} />
+              {excerpt}
             </h3>
             <h2>
               By <PrismicText field={recipe.data.maker} />
@@ -93,22 +121,35 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
             />
           )}
         </div>
-        {/* <SliceZone slices={recipe.data.slices} components={components} /> */}
+        <div className="ingredients">
+          <div className="list-ingredients">
+            <h1>Ingredients for 4 servings</h1>
+            <ul>
+              {recipe.data.ingredients.map((i) => {
+                return(<li><PrismicRichText field={i.ingredient} /></li>)
+              })}
+            </ul>
+          </div>
+          <div className="description-ingredients">
+            <h1>Descriptions</h1>
+            {recipe.data.descriptions.map((i, index) =>{
+              return(<li>{index+1}. <PrismicRichText field={i.step} /></li>)
+            })}
+          </div>
+        </div>
       </article>
       {latestRecipes.length > 0 && (
         <Bounded>
-          <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
-            <div className="w-full">
-              <h2>
+            <div className="latestRecipes">
+              <h1>
                 Latest recipes
-              </h2>
-              <ul className="grid grid-cols-1 gap-12">
+              </h1>
+              <ul className="latestRecipesList">
                 {latestRecipes.map((recipe) => (
                   <LatestRecipe key={recipe.id} recipe={recipe} />
                 ))}
               </ul>
             </div>
-          </div>
         </Bounded>
       )}
       </div>
