@@ -14,9 +14,6 @@ export const Banner = ({ settings }) => {
             <h2>
                 <PrismicText field={settings.data.description} />   
             </h2>
-            <div className="quote">
-                {settings.data.quote.map((p) => console.log(p.quote.text))}
-            </div>
       </div>
     </Bounded>
   );

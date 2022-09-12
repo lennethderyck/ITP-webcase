@@ -16,16 +16,16 @@
 
     .latestRecipesList {
       width: 100%;
-      height: 250px;
       padding: 20px;
       display: flex;
+      flex-wrap: wrap;
       margin-bottom: 50px;
       gap: 50px;
 
       li {
         list-style: none;
         color: black;
-        width: 25%;
+        width: 30%;
 
         .recipe-img {
           height: 200px;
@@ -137,5 +137,78 @@
 
   .image {
     height: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .detail-container {
+    .latestRecipes {
+      margin-bottom: 50px;
+      h1 {
+        font-family: "Aboreto";
+        font-weight: bold;
+      }
+
+      .latestRecipesList {
+        flex-direction: column;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  article {
+    padding: 20px;
+
+    .ingredients {
+      padding: 10px !important;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .list-ingredients {
+        width: 100% !important;
+        padding-bottom: 20px;
+      }
+
+      .description-ingredients {
+        width: 100% !important;
+        height: 100%;
+      }
+    }
+
+    .recipe-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 99% !important;
+      margin: auto;
+      h1 {
+        font-size: 70px;
+        margin-bottom: 20px;
+        font-family: "Raleway";
+      }
+      h2 {
+        font-size: 17px;
+        padding: 0;
+        margin: 0;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 50px;
+      }
+      p {
+        font-weight: 200;
+      }
+    }
+
+    .detail-img {
+      width: 100%;
+      height: 300px !important;
+      position: relative;
+    }
   }
 }

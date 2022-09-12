@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicLink, PrismicText,SliceZone } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Banner } from "../components/Banner";
+import { components } from "../slices";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -85,6 +86,7 @@ const Index = ({recipes, navigation, settings }) => {
       </Head>
       <div className="container">
         <Banner settings={settings}/>
+        <SliceZone slices={settings.data.slices} components={components} />
         <ul className="recipe">
           {recipes.map((recipe) => (
             <Recipe key={recipe.id} recipe={recipe} />
