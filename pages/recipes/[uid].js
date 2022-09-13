@@ -126,7 +126,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
             <h1>Ingredients for 4 servings</h1>
             <ul>
               {recipe.data.ingredients.map((i) => {
-                return(<li><PrismicRichText field={i.ingredient} /></li>)
+                return(<li key={i.ingredient}><PrismicRichText field={i.ingredient} /></li>)
               })}
             </ul>
           </div>
