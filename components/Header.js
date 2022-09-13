@@ -16,7 +16,7 @@ export const Header = ({
   settings,
 }) => {
 
-  const [showNav, setNav] = useState(false);
+  const [showNav, setNav] = useState(true);
   const handleToggleNav = () => {
     setNav(!showNav);
     console.log(showNav)
