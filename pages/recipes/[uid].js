@@ -133,7 +133,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
           <div className="description-ingredients">
             <h1>Descriptions</h1>
             {recipe.data.descriptions.map((i, index) =>{
-              return(<li>{index+1}. <PrismicRichText field={i.step} /></li>)
+              return(<li key={i.step}>{index+1}. <PrismicRichText field={i.step} /></li>)
             })}
           </div>
         </div>
