@@ -1,9 +1,8 @@
-import { PrismicLink, PrismicRichText, PrismicText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicText } from "@prismicio/react";
 
 import { Bounded } from "./Bounded";
 
-
+//Used on the homepage for some extra information
 export const Banner = ({ settings }) => {
   return (
     <Bounded as="banner">

@@ -1,101 +1,35 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText,SliceZone } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Banner } from "../components/Banner";
 import { components } from "../slices";
-import {useEffect, useState, useCallback} from "react";
+import Recipe from '../components/Recipe'
+import {useState} from "react";
 
-const findFirstImage = (slices) => {
-  const imageSlice = slices.find((slice) => slice.slice_type === "image");
 
-  if (imageSlice && prismicH.isFilled.image(imageSlice.primary.image)) {
-    return imageSlice.primary.image;
-  }
-};
-
-const getExcerpt = (slices) => {
-  const text = slices
-    .filter((slice) => slice.slice_type === "text")
-    .map((slice) => prismicH.asText(slice.primary.text))
-    .join(" ");
-
-  const excerpt = text.substring(0, 200);
-
-  if (text.length > 200) {
-    return excerpt.substring(0, excerpt.lastIndexOf(" ")) + "…";
-  } else {
-    return excerpt;
-  }
-};
-const Recipe = ({ recipe }) => {
-  const featuredImage =
-    (prismicH.isFilled.image(recipe.data.featuredImage) &&
-      recipe.data.featuredImage) ||
-    findFirstImage(recipe.data.slices);
-    const excerpt = getExcerpt(recipe.data.slices);
-
-  return (
-    <li>
-      <PrismicLink document={recipe} tabIndex="-1">
-        <div className="recipe-img">
-          {prismicH.isFilled.image(featuredImage) && (
-            <PrismicNextImage
-              field={featuredImage}
-              layout="fill"
-            />
-          )}
-        </div>
-      </PrismicLink>
-      <div className="recipe-text">
-        <h2>
-          <PrismicLink document={recipe}>
-            <PrismicText field={recipe.data.title} />
-          </PrismicLink>
-        </h2>
-        <p className="duration">
-          <PrismicText field={recipe.data.duration} />
-        </p>
-        {excerpt && (
-          <p className="">
-            {excerpt}
-          </p>
-        )}
-      </div>
-    </li>
-  );
-};
-
+//The homepage component
 const Index = ({recipes, navigation, settings }) => {
   const [recipesLength, setRecipesLength] = useState(3)
   const [showButton, setShowButton] = useState(true);
 
+  //Loads more recipes when the "Load more" button is clicked
   const showMoreRecipes = () =>{
     console.log(recipesLength)
     console.log(recipes.length)
     if(recipes.length <= recipesLength+1){
-      console.log("Test")
       setShowButton(false);
     }
     else{
       setShowButton(true);
     }
-    setRecipesLength(recipesLength + 1)
+    setRecipesLength(recipesLength + 3)
   };
-  // const [recipesNew, setRecipesNew] = useState()
 
-  // useEffect(()=>{
-  //   setRecipeData(recipes)
-    
-  //   setRecipesNew(recipes.length = 1)
-    
-  // },[])
   return (
     <Layout
-      withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
     >
@@ -119,6 +53,7 @@ const Index = ({recipes, navigation, settings }) => {
 
 export default Index;
 
+//Gets the data for all recipes, the navigation and the settings
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 

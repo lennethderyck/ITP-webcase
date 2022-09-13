@@ -6,6 +6,8 @@ import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
 
+//The page component
+//In this component only slices are used and are defined in prismic
 const Page = ({ page, navigation, settings }) => {
   return (
     <Layout navigation={navigation} settings={settings}>
@@ -22,6 +24,8 @@ const Page = ({ page, navigation, settings }) => {
 
 export default Page;
 
+//All the date for a specific page is given
+//Also the navigation and setting details are given
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
@@ -38,6 +42,7 @@ export async function getStaticProps({ params, previewData }) {
   };
 }
 
+//The correct path is set for each specific page
 export async function getStaticPaths() {
   const client = createClient();
 

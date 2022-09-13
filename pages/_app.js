@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import "../styles/globals.scss";
-import '../styles/nav.scss';
 import '../styles/details.scss';
 import Link from "next/link";
-import { PrismicLink, PrismicProvider } from "@prismicio/react";
+import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName, linkResolver } from "../prismicio";
 

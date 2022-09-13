@@ -5,12 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useContext } from "react";
 import styles from '../styles/components/_nav.module.scss'
 
+//A smaal component for each link in the navigation
 const NavItem = ({ children }) => {
   return (
     <li>{children}</li>
   );
 };
 
+//This component is the navigation used over the whole website
 export const Header = ({
   navigation,
   settings,

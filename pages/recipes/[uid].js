@@ -4,7 +4,6 @@ import * as prismicH from "@prismicio/helpers";
 import { PrismicNextImage,  } from "@prismicio/next";
 
 import { createClient, linkResolver } from "../../prismicio";
-import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 import { Bounded } from "../../components/Bounded";
 
@@ -14,8 +13,10 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
+//Component for a recipe that is included in the array of latest recipes
 const LatestRecipe = ({ recipe }) => {
 
+  //Gives the first image found in the slices for this component
   const featuredImage =
     (prismicH.isFilled.image(recipe.data.featuredImage) &&
       recipe.data.featuredImage) ||
@@ -44,11 +45,15 @@ const LatestRecipe = ({ recipe }) => {
   );
 };
 
+//The detail component for a recipe
 const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
-  const date = prismicH.asDate(
-    recipe.data.publishDate || recipe.first_publication_date
-  );
 
+  //Gives the publish date set for this component
+    const date = prismicH.asDate(
+      recipe.data.publishDate || recipe.first_publication_date
+    );
+
+    //Finds the first image from teh slices that are linked to this component
     const findFirstImage = (slices) => {
         const imageSlice = slices.find((slice) => slice.slice_type === "image");
       
@@ -62,6 +67,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
       recipe.data.featuredImage) ||
     findFirstImage(recipe.data.slices);
 
+    //Gets the text components from the slices that are linked to this component
     const getExcerpt = (slices) => {
       const text = slices
         .filter((slice) => slice.slice_type === "text")
@@ -159,6 +165,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
 
 export default Recipe;
 
+//Gives all the data for 1 specific recipe, the 4 latest recipes, navigation details and setting details
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
@@ -183,6 +190,7 @@ export async function getStaticProps({ params, previewData }) {
   };
 }
 
+//Sets the correct path for this component
 export async function getStaticPaths() {
   const client = createClient();
 
