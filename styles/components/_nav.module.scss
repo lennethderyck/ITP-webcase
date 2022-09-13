@@ -1,32 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Gruppo&family=Heebo:wght@100;200;300;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .nav {
   background-color: rgb(56, 133, 88);
-  height: 70px;
   position: relative;
-
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &-bars {
-    font-size: 30px;
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
     display: none;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
   .logo {
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
     margin: 0;
-    margin-top: 5px;
     font-family: "Calligraffitti";
     font-size: 30px;
     font-weight: bold;
+    width: fit-content;
+    padding: 15px;
+    margin-top: 5px;
   }
 
   a {
@@ -39,9 +29,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
+    height: 100%;
     margin: 0;
-    padding: 0 50px 0 50px;
 
     li {
       list-style: none;
@@ -56,7 +45,7 @@
 
       a {
         height: 100%;
-        padding: 30px 40px;
+        padding: 25px 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,8 +64,18 @@
 
 @media only screen and (max-width: 800px) {
   .nav {
+    flex-direction: column;
     &-bars {
       display: block;
+      font-size: 30px;
+      position: absolute;
+      right: 50px;
+      top: 25px;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &-mobile {
@@ -85,8 +84,8 @@
       align-items: center;
       width: 100%;
       position: relative;
-      margin-top: 70px;
       padding: 0;
+      margin: 0;
       background-color: rgb(56, 133, 88);
 
       li {
@@ -104,7 +103,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 30px 0;
+          padding: 40px 0;
           margin: 0;
           p {
             margin: 0;

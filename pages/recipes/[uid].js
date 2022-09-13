@@ -165,6 +165,10 @@ export async function getStaticProps({ params, previewData }) {
   const recipe = await client.getByUID("recipe", params.uid);
   const latestRecipes = await client.getAllByType("recipe", {
     limit: 4,
+    orderings: [
+      { field: "my.recipe.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
   });
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");

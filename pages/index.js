@@ -7,12 +7,7 @@ import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Banner } from "../components/Banner";
 import { components } from "../slices";
-
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-});
+import {useEffect, useState, useCallback} from "react";
 
 const findFirstImage = (slices) => {
   const imageSlice = slices.find((slice) => slice.slice_type === "image");
@@ -75,6 +70,29 @@ const Recipe = ({ recipe }) => {
 };
 
 const Index = ({recipes, navigation, settings }) => {
+  const [recipesLength, setRecipesLength] = useState(3)
+  const [showButton, setShowButton] = useState(true);
+
+  const showMoreRecipes = () =>{
+    console.log(recipesLength)
+    console.log(recipes.length)
+    if(recipes.length <= recipesLength+1){
+      console.log("Test")
+      setShowButton(false);
+    }
+    else{
+      setShowButton(true);
+    }
+    setRecipesLength(recipesLength + 1)
+  };
+  // const [recipesNew, setRecipesNew] = useState()
+
+  // useEffect(()=>{
+  //   setRecipeData(recipes)
+    
+  //   setRecipesNew(recipes.length = 1)
+    
+  // },[])
   return (
     <Layout
       withHeaderDivider={false}
@@ -82,16 +100,18 @@ const Index = ({recipes, navigation, settings }) => {
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(settings.data.websiteName)}</title>
+        <title>{prismicH.asText(settings?.data.websiteName)}</title>
       </Head>
       <div className="container">
         <Banner settings={settings}/>
-        <SliceZone slices={settings.data.slices} components={components} />
+        <SliceZone slices={settings?.data.slices} components={components} />
         <ul className="recipe">
-          {recipes.map((recipe) => (
-            <Recipe key={recipe.id} recipe={recipe} />
+          {recipes.slice(0, recipesLength).map((recipe) => (
+            <Recipe key={recipe?.id} recipe={recipe} />
           ))}
         </ul>
+        <div className="btn-container"><button className={`btn btn-primary ${showButton?"":"disable"}`} onClick={() => showMoreRecipes()}>Load more</button></div>
+        
       </div>
     </Layout>
   );

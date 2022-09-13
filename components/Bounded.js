@@ -11,10 +11,10 @@ export const Bounded = ({
       <div
         className={clsx(
           "mx-auto w-100",
-          size === "small" && "mw-80",
-          size === "base" && "mw-80",
+          size === "small" && "mw-60",
+          size === "base" && "mw-70",
           size === "wide" && "mw-80",
-          size === "widest" && "mw-80"
+          size === "widest" && "mw-100"
         )}
       >
         {children}

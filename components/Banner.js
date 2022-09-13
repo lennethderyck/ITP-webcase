@@ -9,7 +9,7 @@ export const Banner = ({ settings }) => {
     <Bounded as="banner">
       <div className="welcomeBanner">
             <h1>
-                Welomce to <span><PrismicText field={settings.data.websiteName}/></span>!
+                Welomce to <span><PrismicText field={settings.data.websiteName}/></span> !
             </h1>
             <h2>
                 <PrismicText field={settings.data.description} />   
