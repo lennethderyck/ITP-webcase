@@ -84,30 +84,13 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
 
     const excerpt = getExcerpt(recipe.data.slices);
 
-    // const changeVolume = (value) => {
-    //   setNewRecipe(recipe.data.test?.map((recipe, index) => {
-    //     const number = isNaN(myArray[index]) ? myArray[index] : myArray[index]/4*value;
-    //     if(!isNaN(number)){
-    //       recipe.amount[0].text = number.toString()
-    //     }
-    //   }));
-    //   console.log(newRecipe);
-    //   console.log(myArray);
-    // }
-
     useEffect(() => {
-      // if(myArray.length != recipe.data.test?.length){
-      //   recipe.data.test?.map((recipe) =>{
-      //     const value = parseInt(recipe.amount[0]?.text);
-      //     setMyArray(oldArray => [...oldArray, value]);
-      //   })
-      // }
       const ingredients = [];
-      recipe.data.test?.forEach((ingredient)=>{
+      recipe.data.ingredients?.forEach((ingredient)=>{
         ingredients.push({
           id: ingredient.ingredient && ingredient.ingredient[0] ? ingredient.ingredient[0].text : "",
           amount: ingredient.amount && ingredient.amount[0] ? ingredient.amount[0].text : "",
-          unit: ingredient.unitofmeasure && ingredient.unitofmeasure[0] ? ingredient.unitofmeasure[0].text : ""
+          unit: ingredient.unit && ingredient.unit[0] ? ingredient.unit[0].text : ""
         })
         console.log(ingredient);
       })
