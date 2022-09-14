@@ -1,7 +1,9 @@
 {
   "_cts": {
     "page": {},
-    "recipe": {},
+    "recipe": {
+      "test": {}
+    },
     "navigation": {},
     "settings": {
       "websiteName": {

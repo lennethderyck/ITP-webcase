@@ -2,6 +2,8 @@ import Head from "next/head";
 import { PrismicLink, PrismicText, PrismicRichText,SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { PrismicNextImage,  } from "@prismicio/next";
+import {useEffect, useState} from "react";
+import { QuantityPicker } from "react-qty-picker";
 
 import { createClient, linkResolver } from "../../prismicio";
 import { Layout } from "../../components/Layout";
@@ -48,6 +50,9 @@ const LatestRecipe = ({ recipe }) => {
 //The detail component for a recipe
 const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
 
+  const [countPersons, setCountPersons] = useState(4);
+  const [ingredientsList, setIngredientsList] = useState([]);
+
   //Gives the publish date set for this component
     const date = prismicH.asDate(
       recipe.data.publishDate || recipe.first_publication_date
@@ -78,6 +83,36 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
     };
 
     const excerpt = getExcerpt(recipe.data.slices);
+
+    // const changeVolume = (value) => {
+    //   setNewRecipe(recipe.data.test?.map((recipe, index) => {
+    //     const number = isNaN(myArray[index]) ? myArray[index] : myArray[index]/4*value;
+    //     if(!isNaN(number)){
+    //       recipe.amount[0].text = number.toString()
+    //     }
+    //   }));
+    //   console.log(newRecipe);
+    //   console.log(myArray);
+    // }
+
+    useEffect(() => {
+      // if(myArray.length != recipe.data.test?.length){
+      //   recipe.data.test?.map((recipe) =>{
+      //     const value = parseInt(recipe.amount[0]?.text);
+      //     setMyArray(oldArray => [...oldArray, value]);
+      //   })
+      // }
+      const ingredients = [];
+      recipe.data.test?.forEach((ingredient)=>{
+        ingredients.push({
+          id: ingredient.ingredient && ingredient.ingredient[0] ? ingredient.ingredient[0].text : "",
+          amount: ingredient.amount && ingredient.amount[0] ? ingredient.amount[0].text : "",
+          unit: ingredient.unitofmeasure && ingredient.unitofmeasure[0] ? ingredient.unitofmeasure[0].text : ""
+        })
+        console.log(ingredient);
+      })
+      setIngredientsList(ingredients);
+    },[recipe]);
 
   return (
     <Layout
@@ -123,27 +158,28 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
             <PrismicNextImage
               field={featuredImage}
               layout="fill"
-              className="object-cover"
+              className="detail-img-cover"
             />
           )}
         </div>
         <div className="ingredients">
           <div className="list-ingredients">
-            <h1>Ingredients for 4 servings</h1>
+            {ingredientsList.length?<><h2>Ingredients for {countPersons} servings</h2><QuantityPicker min={1} value={4} onChange={(value) =>setCountPersons(value)}/></>:"No ingredients available"}
             <ul>
-              {recipe.data.ingredients.map((i) => {
-                return(<li key={i.ingredient}><PrismicRichText field={i.ingredient} /></li>)
+              {ingredientsList?.map((i) => {
+                return(<li key={i.id}><p>{(i.amount/4*countPersons) === 0 ? "":(i.amount/4*countPersons)} {i.unit} {i.id}</p></li>)
               })}
             </ul>
           </div>
           <div className="description-ingredients">
-            <h1>Descriptions</h1>
-            {recipe.data.descriptions.map((i, index) =>{
-              return(<li key={i.step}>{index+1}. <PrismicRichText field={i.step} /></li>)
+            <h2>Descriptions</h2>
+            {recipe.data.descriptions?.map((i, index) =>{
+              return(<li key={i.step[0]?.text}>{index+1}. <PrismicRichText field={i.step} /></li>)
             })}
           </div>
         </div>
       </article>
+      
       {latestRecipes.length > 0 && (
         <Bounded>
             <div className="latestRecipes">

@@ -57,11 +57,20 @@
       padding: 50px;
       display: flex;
       justify-content: space-evenly;
+      gap: 20px;
       .list-ingredients {
         width: 50%;
         height: 100%;
-        h1 {
-          margin-bottom: 40px;
+
+        .quantity-picker {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          margin: 20px 0;
+        }
+        h2 {
+          margin-bottom: 10px;
           font-family: "Aboreto";
           font-weight: bold;
         }
@@ -84,7 +93,7 @@
           display: flex;
           gap: 10px;
         }
-        h1 {
+        h2 {
           margin-bottom: 40px;
           font-family: "Aboreto";
           font-weight: bold;
@@ -127,6 +136,12 @@
       width: 100%;
       height: 600px;
       position: relative;
+
+      &-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
