@@ -1,0 +1,28 @@
+.welcomeBanner {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 50px;
+    font-family: "Inter";
+    span {
+      font-weight: bold;
+      color: rgb(56, 133, 88);
+      font-family: "Calligraffitti" !important;
+    }
+  }
+
+  h2 {
+    font-weight: 200;
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .welcomeBanner {
+    padding: 25px;
+  }
+}

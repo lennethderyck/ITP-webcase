@@ -1,4 +1,5 @@
 import { PrismicText } from "@prismicio/react";
+import styles from '../styles/components/_footer.module.scss';
 
 
 export const Footer = ({settings }) => {
@@ -7,7 +8,7 @@ export const Footer = ({settings }) => {
 
   //Returns e footer component that is used for the whole website and is placed at the bottom
   return (
-        <div className="footer">
+        <div className={styles["footer"]}>
           <p><PrismicText field={settings.data.websiteName} /> - {date} ©</p>
         </div>
   );

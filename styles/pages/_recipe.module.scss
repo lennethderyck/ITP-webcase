@@ -1,0 +1,229 @@
+.detail-container {
+  margin-top: 20px;
+  padding-top: 50px;
+
+  .back-btn {
+    text-decoration: none;
+    color: rgb(71, 71, 71);
+  }
+
+  .latestRecipes {
+    margin-bottom: 50px;
+    h1 {
+      font-family: "Aboreto";
+      font-weight: bold;
+    }
+
+    .latestRecipesList {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+      gap: 50px;
+
+      li {
+        list-style: none;
+        color: black;
+        width: 30%;
+
+        .recipe-img {
+          height: 200px;
+          position: relative;
+        }
+
+        .recipe-text {
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+
+          .duration {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+
+  .recipe-article {
+    padding: 20px;
+
+    .ingredients {
+      padding: 50px;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      .list-ingredients {
+        width: 50%;
+        height: 100%;
+
+        .quantity-picker {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          margin: 20px 0;
+        }
+        h2 {
+          margin-bottom: 10px;
+          font-family: "Aboreto";
+          font-weight: bold;
+        }
+
+        ul {
+          li {
+            font-size: 20px;
+            font-style: italic;
+            font-family: "Heebo";
+          }
+        }
+      }
+      .description-ingredients {
+        width: 50%;
+        height: 100%;
+
+        li {
+          list-style: none;
+          font-size: 20px;
+          display: flex;
+          gap: 10px;
+        }
+        h2 {
+          margin-bottom: 40px;
+          font-family: "Aboreto";
+          font-weight: bold;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .recipe-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 70%;
+      margin: auto;
+      h1 {
+        font-size: 70px;
+        margin-bottom: 20px;
+        font-family: "Inter";
+      }
+      h2 {
+        font-size: 17px;
+        padding: 0;
+        margin: 0;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 50px;
+      }
+      p {
+        font-weight: 200;
+      }
+    }
+
+    .detail-img {
+      width: 100%;
+      height: 600px;
+      position: relative;
+
+      &-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.custom-section {
+  height: 400px;
+  position: relative;
+
+  .image {
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .detail-container {
+    .latestRecipes {
+      margin-bottom: 50px;
+      h1 {
+        font-family: "Aboreto";
+        font-weight: bold;
+      }
+
+      .latestRecipesList {
+        flex-direction: column;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .recipe-article {
+    padding: 20px;
+
+    .ingredients {
+      padding: 10px !important;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .list-ingredients {
+        width: 100% !important;
+        padding-bottom: 20px;
+      }
+
+      .description-ingredients {
+        width: 100% !important;
+        height: 100%;
+      }
+    }
+
+    .recipe-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 99% !important;
+      margin: auto;
+      h1 {
+        font-size: 70px;
+        margin-bottom: 20px;
+        font-family: "Raleway";
+      }
+      h2 {
+        font-size: 17px;
+        padding: 0;
+        margin: 0;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 50px;
+      }
+      p {
+        font-weight: 200;
+      }
+    }
+
+    .detail-img {
+      width: 100%;
+      height: 300px !important;
+      position: relative;
+    }
+  }
+}
