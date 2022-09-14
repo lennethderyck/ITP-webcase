@@ -82,6 +82,64 @@
           }
         }
       },
+      "introduction": {
+        "library": "slices",
+        "id": "introduction",
+        "name": "Introduction",
+        "description": "Introduction",
+        "model": {
+          "id": "introduction",
+          "type": "SharedSlice",
+          "name": "Introduction",
+          "description": "Introduction",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Introduction",
+              "primary": {
+                "introduction": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Introduction",
+                    "placeholder": "A nice description of your feature",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,heading2,heading3,heading4,heading5,heading6"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "introduction": [
+                {
+                  "type": "paragraph",
+                  "text": "Irure tempor anim exercitation eu laborum qui.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "introduction"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "quote": {
         "library": "slices",
         "id": "quote",
@@ -198,6 +256,64 @@
               ]
             },
             "slice_type": "text"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "title": {
+        "library": "slices",
+        "id": "title",
+        "name": "Title",
+        "description": "Title",
+        "model": {
+          "id": "title",
+          "type": "SharedSlice",
+          "name": "Title",
+          "description": "Title",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Title",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Plastic",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "title"
           }
         },
         "meta": {

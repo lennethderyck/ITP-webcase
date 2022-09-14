@@ -1,0 +1,15 @@
+.slice-img-container {
+  width: 100%;
+
+  figure {
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+
+    .slice-img-caption {
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+}

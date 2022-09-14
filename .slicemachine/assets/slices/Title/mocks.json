@@ -1,0 +1,19 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Plastic",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "title"
+  }
+]

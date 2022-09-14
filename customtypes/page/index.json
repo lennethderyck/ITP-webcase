@@ -31,6 +31,15 @@
             },
             "text": {
               "type": "SharedSlice"
+            },
+            "introduction": {
+              "type": "SharedSlice"
+            },
+            "quote": {
+              "type": "SharedSlice"
+            },
+            "title": {
+              "type": "SharedSlice"
             }
           }
         }

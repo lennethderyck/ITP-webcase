@@ -34,6 +34,30 @@
           }
         }
       }
+    },
+    "Title": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Introduction": {
+      "default": {
+        "primary": {
+          "introduction": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }
