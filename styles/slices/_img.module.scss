@@ -13,3 +13,15 @@
     }
   }
 }
+@media only screen and (max-width: 800px) {
+  .slice-img-container {
+    figure {
+      width: 100%;
+      height: 380px;
+      .slice-img-caption {
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+  }
+}

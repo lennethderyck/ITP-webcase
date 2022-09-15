@@ -44,9 +44,7 @@ const Index = ({recipes, navigation, settings }) => {
 
   //Loads more recipes when the "Load more" button is clicked
   const showMoreRecipes = () =>{
-    console.log(recipesLength)
-    console.log(recipes.length)
-    if(recipes.length <= recipesLength+1){
+    if(recipes.length <= recipesLength+3){
       setShowButton(false);
     }
     else{
