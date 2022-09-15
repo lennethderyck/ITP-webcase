@@ -64,6 +64,31 @@ img {
   }
 }
 
+.home-recipes-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Inter";
+    margin-bottom: 50px;
+  }
+
+  .home-recipes-search {
+    .search-input {
+      padding: 5px 20px;
+      border: none;
+    }
+    .search-btn {
+      border: none;
+      padding: 5px 10px;
+    }
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .recipe {
     flex-direction: column;
