@@ -74,7 +74,7 @@ const Index = ({recipes, navigation, settings }) => {
               value={text}
               onChange={handleInputChange}
               className="search-input"
-              placeholder="Search for a transaction"
+              placeholder="Search for a recipe"
             />
             <button
               type="button"

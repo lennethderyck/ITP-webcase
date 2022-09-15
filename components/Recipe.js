@@ -55,7 +55,7 @@ const Recipe = ({ recipe }) => {
             </PrismicLink>
           </h2>
           <p className="duration">
-            <PrismicText field={recipe.data.duration} />
+            Duration: <PrismicText field={recipe.data.duration} />
           </p>
           {excerpt && (
             <p className="">
