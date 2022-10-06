@@ -12,7 +12,7 @@ import {useState, useCallback, useEffect} from "react";
 
 //The homepage component
 const Index = ({recipes, navigation, settings }) => {
-  const [recipesLength, setRecipesLength] = useState(3)
+  const [recipesLength, setRecipesLength] = useState(3);
   const [showButton, setShowButton] = useState(true);
   const [recipeList, setRecipeList] = useState(recipes);
 
