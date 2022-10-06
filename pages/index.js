@@ -22,12 +22,6 @@ const Index = ({recipes, navigation, settings }) => {
   const handleInputChange = useCallback((e) => setText(e.target.value), []);
   const handleSearch = useCallback(() => {setSearch(text)}, [text]);
 
-  // const testList = recipes.filter((recipe) => {
-  //   console.log(recipe.tags);
-  //   console.log(search);
-  //   return recipe.tags.includes(search);
-  // })
-  // console.log(testList)
 
   useEffect(() => {
     const filteredRecipes = []

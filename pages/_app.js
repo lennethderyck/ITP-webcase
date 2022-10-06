@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
 import "../styles/globals.scss";
 import '../styles/details.scss';
 import Link from "next/link";
