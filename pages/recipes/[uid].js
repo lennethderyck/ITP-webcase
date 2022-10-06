@@ -147,7 +147,7 @@ const Recipe = ({ recipe, latestRecipes, navigation, settings }) => {
         </div>
         <div className="ingredients">
           <div className="list-ingredients">
-            {ingredientsList.length?<><h2>Ingredients for {countPersons} servings</h2><QuantityPicker min={1} value={4} onChange={(value) =>setCountPersons(value)}/></>:"No ingredients available"}
+            {ingredientsList.length?<><h2>Ingredients for {countPersons} servings.</h2><QuantityPicker min={1} value={4} onChange={(value) =>setCountPersons(value)}/></>:"No ingredients available"}
             <ul>
               {ingredientsList?.map((i) => {
                 return(<li key={i.id}><p>{(i.amount/4*countPersons) === 0 ? "":(i.amount/4*countPersons)} {i.unit} {i.id}</p></li>)
